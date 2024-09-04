@@ -9,20 +9,23 @@ def get_kit_body (name):
 
 # La funcion get_new_user_token guarda el codigo token del usuario registrado
 def get_new_user_token():
-    token=data.headers["Authorization"]
-    return token
+    user_response = sender_stand_request.post_new_user(data.user_body)
+    return user_response.json()["authToken"]
 
 # La funcion positive_assert aplica los datos de prueba positivos en el cuerpo de la solicitud
 def positive_assert(kit_body):
     kit1_response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
     assert kit1_response.status_code == 201
-    return kit1_response
+    assert kit1_response.json()["name"] == kit_body["name"]
+    print(kit1_response.json())
 
 # La funcion negative_assert_code_400 aplica los datos de prueba negativos en el cuerpo de la solicitud
 def negative_assert_code_400(kit_body):
     kit1_response = sender_stand_request.post_new_client_kit(kit_body, get_new_user_token())
     assert kit1_response.status_code == 400
+    print(kit1_response.json())
     return kit1_response
+
 
 
 # test 1
@@ -62,7 +65,8 @@ def test_numbers():
 
 # test 8
 def test_no_parameters():
-    kit1 = get_kit_body(0)
+    kit1 = get_kit_body()
+    kit1.pop("name")
     negative_assert_code_400(kit1)
 
 # test 9

@@ -1,7 +1,6 @@
 headers = {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer jknnFApafP4awfAIFfafam2fma"
-    }
+    "Content-Type": "application/json"
+}
 
 user_body = {
     "firstName": "Andrea",
@@ -10,12 +9,5 @@ user_body = {
 }
 
 kit = {
-       "name": "Mi conjunto",
-       "card": {
-           "id": 1,
-           "name": "Para la situación"
-       },
-       "productsList":None,
-       "id": 7,
-       "productsCount": 0
-    }
+       "name": "Mi conjunto"
+}
