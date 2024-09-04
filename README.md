@@ -18,7 +18,7 @@ incluyendo la validación de nombres de kit y registro de usuario.
 1. Instalar la libreria request a traves la consola con el siguiente comando :pip install requests
 2. Instalar pytest a traves de la consola con el siguente comando : pip install pytest
 3. Actualizar la url del servidor y verificar que los endpoints sean correctos
-4. Realizar los test con la herramienta pytest 
+4. Realizar los test ubicados en el archivo create_kit_name_test.py con la herramienta pytest 
 
 # Pruebas
 
