@@ -65,7 +65,7 @@ def test_numbers():
 
 # test 8
 def test_no_parameters():
-    kit1 = get_kit_body()
+    kit1 = get_kit_body("")
     kit1.pop("name")
     negative_assert_code_400(kit1)
 

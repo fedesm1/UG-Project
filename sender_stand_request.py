@@ -14,7 +14,7 @@ def post_new_client_kit(kit_body, token):
     post_headers['Authorization'] = token
     return requests.post(configuration.URL_SERVICE + configuration.KITS_PATH,
                          json=kit_body,
-                         headers=data.headers)
+                         headers=post_headers)
 
 
 
